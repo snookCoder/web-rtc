@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC Classroom</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="grid"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const path = window.location.pathname;
+        const script = document.createElement('script');
+        script.src = path === '/student' ? '/student.js' : '/teacher.js';
+        document.body.appendChild(script);
+    </script>
+</body>
+</html>
